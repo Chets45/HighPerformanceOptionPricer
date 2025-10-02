@@ -1,0 +1,7 @@
+streamlit
+numpy
+plotly
+pandas
+yfinance
+mysql-connector-python
+python-dateutil

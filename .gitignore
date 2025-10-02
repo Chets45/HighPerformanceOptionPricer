@@ -1,0 +1,11 @@
+# CLion / CMake
+cmake-build-*/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# macOS
+.DS_Store
