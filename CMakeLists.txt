@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(OptionsPricingCalculator LANGUAGES CXX)
 
-set(Python_EXECUTABLE "/opt/anaconda3/bin/python" CACHE PATH "Python interpreter")
+find_package(Python3 3.7 COMPONENTS Interpreter Development REQUIRED)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
