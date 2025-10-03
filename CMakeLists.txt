@@ -15,8 +15,8 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(pybind11)
 
 add_library(option_lib
-        src/Option.cpp
-        src/MathUtil.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/Option.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/MathUtil.cpp
 )
 
 target_include_directories(option_lib PUBLIC ${pybind11_INCLUDE_DIRS})
@@ -24,7 +24,7 @@ target_include_directories(option_lib PUBLIC ${pybind11_INCLUDE_DIRS})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/python)
 
 pybind11_add_module(option_pricer_cpp
-        src/bindings.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/src/bindings.cpp
 )
 
 target_link_libraries(option_pricer_cpp PRIVATE option_lib)
