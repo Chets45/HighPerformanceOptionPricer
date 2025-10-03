@@ -2,7 +2,7 @@
 
 A comprehensive options analysis suite featuring a C++ calculation engine for high-speed pricing and risk analysis, with a Python/Streamlit front-end for data handling and visualisation.
 
-![High-Performance Options Pricer Dashboard](./assets.option_pricer_dashboard.png)
+![High-Performance Options Pricer Dashboard](./assets/option_pricer_dashboard.png)
 
 ## Features
 
