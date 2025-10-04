@@ -40,14 +40,33 @@ The easiest way to get set up on a Mac is with [Homebrew](https://brew.sh/).
   brew install cmake mysql python
   ```
 
-### 2. Clone & Build the Project
-
-Clone the repository and compile the C++ engine. The build system is configured to automatically place the compiled module in the correct directory.
+### 2. Clone the Repository
 
 ```bash
 # Clone the repository and navigate into it
 git clone https://github.com/Chets45/HighPerformanceOptionPricer.git
 cd HighPerformanceOptionPricer
+```
+
+### 3. Set Up the Python Environment
+
+
+```bash
+# Navigate to the python directory
+cd python
+
+# Create and activate a virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# Install all the required packages
+pip install -r requirements.txt
+```
+### 4. Build the C++ Module
+
+```bash
+# From the project's root directory
+cd ..
 
 # Create a build directory
 cmake -S . -B build
@@ -55,7 +74,8 @@ cmake -S . -B build
 # Build the module
 cmake --build build
 ```
-### 3. Setting the Database up
+
+### 5. Setting the Database up
 
 #### **Start the MySQL Service:**
 
@@ -77,24 +97,6 @@ export DB_PASSWORD="your_mysql_root_password"
 ```bash
 mysql -u root -p"$DB_PASSWORD" < sql/schema.sql
 ```
-
-
-### 4. Set Up the Python Environment
-
-Using a virtual environment is highly recommended to keep dependencies clean.
-
-```bash
-# Navigate to the python directory
-cd python
-
-# Create and activate a virtual environment
-python -m venv venv
-source venv/bin/activate
-
-# Install all the required packages
-pip install -r requirements.txt
-
-```
 ---
 
 ## Usage
@@ -108,6 +110,9 @@ To get started, you need to populate your database with the last year's worth of
 **Note:** This process will take several minutes as it performs thousands of calculations.
 
 ```bash
+# Navigate to the python directory
+cd python 
+
 # From inside the 'python/' directory
 python backfill_iv_data.py
 ````
@@ -115,9 +120,8 @@ python backfill_iv_data.py
 ### 2. Launch UI
 
 ```bash
-streamlit run OptionPricerUI.py
+streamlit run OptionPricer.py
 ```
-
 
 ### Daily Updates
 
